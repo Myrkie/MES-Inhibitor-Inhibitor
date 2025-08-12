@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBD}") = "MESInhibitorInhibitor", "MESInhibitorInhibitor.csproj", "{DA3BEB11-979D-4005-8417-EE1C29B550FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA3BEB11-979D-4005-8417-EE1C29B550FC}.Release|x64.ActiveCfg = Release|x64
+		{DA3BEB11-979D-4005-8417-EE1C29B550FC}.Release|x64.Build.0 = Release|x64
+		{DA3BEB11-979D-4005-8417-EE1C29B550FC}.Debug|x64.ActiveCfg = Debug|x64
+		{DA3BEB11-979D-4005-8417-EE1C29B550FC}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64526CA3-8428-4693-93FD-2D47124A8A18}
+	EndGlobalSection
+EndGlobal
