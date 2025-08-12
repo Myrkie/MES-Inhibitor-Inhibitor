@@ -26,4 +26,4 @@ Inhibitors:
 
 Encounter Actions:
 1. GenerateExplosion (allows drones to generate explosions on action, usually used for cheap drones that explode on grind without any way to diffuse)
-2. DamageToolAttacker (allows drones to apply damage to an attacker, mostly used for by cheap drones that apply survivable levels of damage on grind 5000~)
+2. DamageToolAttacker (allows drones to apply damage to an attacker, mostly used for by cheap drones that apply unsurvivable levels of damage on grind 5000~)
