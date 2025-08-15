@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Torch.Managers.PatchManager;
+using VRage.Game;
+using VRage.ObjectBuilders;
 using VRage.Utils;
 
 namespace MESInhibitorInhibitor {
@@ -112,7 +115,7 @@ namespace MESInhibitorInhibitor {
                 //                                   $"PlayerInhibitor: {playerInhibitorEffect}");
 
                 if (generateExplosion || damageToolAttacker || jetpackInhibitorEffect || drillInhibitorEffect || nanobotInhibitorEffect || jumpInhibitorEffect || playerInhibitorEffect) {
-                    MyLog.Default.WriteLineAndConsole($"[MESInhibitorInhibitor] Blocked action: {actionProfile.ProfileSubtypeId}");
+                    // MyLog.Default.WriteLineAndConsole($"[MESInhibitorInhibitor] Blocked action: {actionProfile.ProfileSubtypeId}");
                     return false;
                 }
             }
@@ -156,16 +159,22 @@ namespace MESInhibitorInhibitor {
         }
 
         private static bool ReplaceArmorWithModulePrefix(
-            object blocks,
-            object oldBlock,
-            object newBlockId,
-            object data) {
-            var subtype = newBlockId?.ToString() ?? string.Empty;
-            if (!subtype.Contains("MES-Suppressor-")) return true;
+            List<MyObjectBuilder_CubeBlock> blocks,
+            MyObjectBuilder_CubeBlock oldBlock,
+            SerializableDefinitionId newBlockId,
+            object data)
+        {
+            var subtype = newBlockId.SubtypeName ?? string.Empty;
 
-            MyLog.Default.WriteLineAndConsole($"[MESInhibitorInhibitor] Prevented placement of MES inhibitor: {subtype}");
+            if (!subtype.Contains("MES-Suppressor-"))
+                return true;
+
+            MyLog.Default.WriteLineAndConsole(
+                $"[MESInhibitorInhibitor] Prevented placement of MES inhibitor: {subtype}"
+            );
             return false;
         }
+
 
         private static bool SetDefaultInhibitorRangesPrefix(object block, object data) {
             var subtypeProp = block?.GetType().GetProperty("SubtypeName", BindingFlags.Public | BindingFlags.Instance);
